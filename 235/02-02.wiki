@@ -1,0 +1,19 @@
+General Equation of a Wave 
+:Q
+============================
+
+The general equation of a wave can be given as: 
+
+$\frac{\delta^2u}{\delta t^2}=v^2\frac{\delta^2u}{\delta x^2}$
+
+where $v^2$ represents the wave velocity in the direction of propogation
+and $u$ represents the vertical displacement of a given particle that lies on
+the wave. 
+
+
+The wave equations for the electric and magnetic field individually are
+given by 
+
+$\nabla^2\vec{E}=\mu_0\epsilon_0\frac{\delta^2E}{\delta t^2}$
+
+$\nabla^2\vec{B}=\mu_0\epsilon_0\frac{\delta^2B}{\delta t^2}$
