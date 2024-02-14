@@ -450,7 +450,7 @@ $J_p(x)=-q\frac{D_p}{L_p}p_{n0}(e^{\frac{V}{V_T}}-1)e^{\frac{-(x-x_n)}{L_p}}$
 ![markdown](https://github.com/SUBRAMANYA-IV/School_Markdown_files/assets/104723714/fe7090c9-8af1-4b23-aeec-f9b1784679c9)
 
 
-# MOS capacitor
+# MOS capacitor (TODO)
 
 
 **MOSFET**, or Metal Oxide Semiconductor _field effect_ transistor, is a
@@ -474,7 +474,7 @@ an then a capacitor again.
 
 $Q=C_{ox}\cdot V{ov}$
 
-## Operation of a MOSFET
+## Operation of a MOSFET (TODO)
 
 ![MOSFET](https://github.com/SUBRAMANYA-IV/School_Markdown_files/blob/master/ECE/340/mosfet.jpg)
 - connection of depletion regions
@@ -492,6 +492,34 @@ $Q=C_{ox}\cdot V{ov}$
 
 applying a bias changes the size of the depletion region. 
 Just like a normal capacitor, paralell plates have capacitive properties. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
