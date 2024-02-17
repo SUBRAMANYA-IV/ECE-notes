@@ -17,11 +17,14 @@ sinusoidal signals that are supplied to a load.
 
 **TODO: insert rectifier diagram**
 
+![half-rectifier](https://madpcb.com/wp-content/uploads/2020/11/Half-wave-Rectifier.jpg)
+
 ##### example use of diodes: Diode logic gates
 
 Another use case of diodes is modelling OR and AND logic gates. 
 
 **TODO: insert logic gate diagram**
+![diode-logic-gate](https://i.ytimg.com/vi/OORpgCdyJlE/maxresdefault.jpg)
 
 
 ## Terminal Chaecteristics of junction diodes. 
@@ -40,6 +43,7 @@ The operating regions of a diode can be broken down into 3 parts
 1) Reverse bias region, at $v<0$
 1) breakdown region, at $v<-V_{ZK}$
 
+![diode-current-voltage](https://cdn.sparkfun.com/assets/4/4/a/5/b/5175b518ce395f2d49000000.png)
 
 ### The Forward Bias Region. 
 
@@ -56,7 +60,7 @@ sectional area of the diode. Hence, _doubling_ the diodes area will
 double the value of $I_S$. $I_S$ is also strongly related to the temperature. 
 as a rule of thumb, **I_S doubles in value fo every 5c rise in temperature**
 
-The voltage %V_T$ (thermal voltage) is given by 
+The voltage $V_T$ (thermal voltage) is given by 
 
 $V_T=\frac{kT}{q}$
 
@@ -90,6 +94,123 @@ $V_2-V_1=2.3V_Tlog(\frac{I_2}{I_1})$
 
 which states that for every 10-fold increase in forward current leads to a 
 $2.3V_T$ increase in voltage-drop
+
+
+### Reverse-Bias region
+
+Reverse-bias region is the region of operation when the diode voltage
+is _negative_ 
+
+The equation
+
+$i=I_s(e^\frac{v}{V_T}-1)$
+
+Demonstrates how, when the reverse voltage $v$ becomes a few times larger than
+$V_T$, the exponential term becomes negligibly small, and the diode current
+becomes
+
+$i\approx-I_s$
+
+where $I_S$ represents the drift current, inline with the theory behind
+current in _pn junctions_
+Despite theory stating $I_S$ is quiet small, **it is still much larger than 
+$I_S$ in reality**, AND the magnitude of this current is still impacted
+by the reverse voltage, due to **leakage effects**.
+These **leakage currents** are proportional to the **junction area**, same as 
+the drift current $I_S$ is. 
+**however**, their dependence on temperature is different. 
+
+- $I_S$ doubles for every 5 degrees increase in temeprature. 
+- Reverse current doubles for every 10 degrees increase in temperature. 
+
+### Breakdown Region
+
+The region defined by when the reverse voltage exceeds a threshold value
+that is specific to the particular diode, called the **breakdown voltage**,
+denotated by $V_{ZK}$, where $Z$ stands for _zener_ and $K$ stands for knee
+
+The diagram above shows how, for a given change in voltage, the current 
+increases significantly, indicating that the diode has started to act like 
+an _shorted circuit_ again. 
+
+
+## Modeling the diode forward charecteristic 
+
+As seen above, the diode can be modelled in two distinct ways;
+ideal and exponential. 
+
+The symbols used will be 
+
+- DC Source: $V_{DD}$
+- Resistr: $R$
+- Diode Voltage: $V_D$
+- Diode Current: $I_D$
+
+
+
+### Exponential Model
+
+This represents the most accurate description of the diode in the _forward
+region_, but its non-linear, making it difficult to work with. 
+
+###### Example
+
+![diode-example](https://miro.medium.com/v2/resize:fit:432/1*mijJgpHdt7DDmrPsb7tOcg.png)
+
+Analyzing the figure above, given that $V_DD$ is greater than $0.5 V$, we can
+use the approximated $I-V$ relationship, given by 
+
+$I_D=I_S e^{\frac{V_D}{V_R}}$
+
+Utilizing kirchoffs loop rule, we also get the equation
+
+$I_D=\frac{V_{DD}-V_D}{R}$
+
+given these two equations, and assuming $I_S$ is known, $I_D$ and $V_D$ can
+be determined through a system of equations
+
+### Graphical Analysis with exponential model 
+
+Graphing these two relationships can give us a more intuitive understanding
+as to _why_ it makes sense. 
+
+Given that the above circuit is linear, the current through all elements must
+be the same, and so the intersection between these two curves must be the
+operating voltage of the diode
+
+![diode-load-iv-graph](https://upload.wikimedia.org/wikipedia/commons/e/ed/Load_line_diode.png)
+
+The graph above demonstrates this. **assuming the diode doesnt have an internal
+resistance**, 
+
+- the exponential curve represents the diode IV relationship
+  - the IV curve of the circuit if only the diode was there 
+- the straight line represents the **load line**
+  - the I-V relationship of the circuit if the diode wasn't there
+- vertical axis represents the current through the whole circuit
+- horizontal axis represents voltage across various elements, such as 
+  - $V_D$: across the diode
+  - $V_DD$ across the voltage source (or total voltage)
+    - fromt his, it can be deduced that the voltage across the load is given by 
+      $V_R=V_{DD}-V_D$
+
+Though this method is good for visualizing the basic relationship, its useless
+in more complex circutits. For that, we use 
+
+
+### Iterative analysis Using the exponential model
+
+The principle of iteration is to use an approximation to get initial values,
+and then use those initial values to determine a more exact value of the initial
+approximation
+
+
+
+
+
+
+
+
 
 
 
