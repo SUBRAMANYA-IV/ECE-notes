@@ -204,6 +204,98 @@ The principle of iteration is to use an approximation to get initial values,
 and then use those initial values to determine a more exact value of the initial
 approximation
 
+When using iteration, we're usually given the operating voltage of the diode
+at a given current. 
+
+###### Example
+
+Determine the current $I_D$ and the diode voltage $V_D$ with $V_{DD}=5V$ and
+$R=1 k\Omega$. _Assume that the diode has a current of $1mA$ at $0.7V$_
+
+###### Reasoning
+First, we assume that $V_D$ is still 0.7 at the operating current of the circuit.
+This makes sense because when operating in the forward-bias region of a diodes
+IV, large changes in current result in small changes in the voltage across
+the diode, hence allowing for approximation.
+   
+
+$I_D=\frac{V_{DD}-V_D}{R}$
+
+$=\frac{5-0.7}{1*10^3}=4.3mA$
+
+with this, we 1 complete coordinate on the I-V plot, given by $(0.7V,1mA)$ 
+and another incomplete one, given by $(V_2,4.3mA)$
+
+Using the diode equation, we can get a better estimate for $V_D$. 
+
+$V_2-V_1=2.3V_Tlog(\frac{I_2}{I_1})$
+
+Substituting all constants and rearanging for $V_2$, we get $V_2=0.738V$
+This process can be repeated to get a more accurate value, but (though not shown)
+the _second iterative process_ yields a voltage very close to the one above. 
+
+### Constant Voltage Drop Model
+
+![exponential-vs-constant-diode](https://www.physicsforums.com/attachments/diode-constant-voltage-drop-model-jpg.225896/)
+
+The constant voltage drop model assumes that for forward conducting diodes
+usually have a voltage drop in the narrow range, around 0.6 to 0.8
+
+
+
+
+## Small Signal Model
+
+Diodes can be bias to operate at a point in the forward I-V range and a small
+AC signalis superimposed on the DC quantity. 
+in essence, the diode acts as a variable resistor, where its resistance is
+determined by its forward bias or "point of operation", ie where on its IV curve
+is it "operating".
+
+![small-signal-model](https://2.bp.blogspot.com/-bemFicfFoRw/UVz0kDkDuCI/AAAAAAAAAmk/LhyypCFTk6U/s1600/small+signal+diode2.bmp)
+
+Assuming the "input signal" (ie AC Voltage signal) is sufficiently small, 
+its _current_ operating range can be approximated to be linear. 
+This relationship is given above, where 
+
+- $v_d(t)$ represents the input AC signal voltage 
+- $V_D$ represents the applied bias (to get the desired "resistance")
+- $I_D$ is the DC component of the current (ie, the current drawn if a AC 
+  source wasn't applied)
+- $i_d(t)$ represents the output AC current (including $I_D$)
+
+For reference purpose, the original diode IV equation is given by 
+
+$I_D=I_Se^{\frac{V_D}{V_T}}$
+
+superimposing the two voltages, we get 
+
+$v_D(t)=V_D+v_d(t)$
+
+given this, $v_d$ can be substituted into the diode-voltage-current equation
+to give 
+
+$i_D(t)=I_Se^{\frac{(V_D+v_d)}{V_T}}$
+
+which can be expanded to 
+
+$i_D(t)=I_Se^{\frac{V_D}{V_T}}e^{\frac{v_d}{V_T}}$
+
+Referencing the original diode IV equation, the above equation can be simplified
+to
+
+$i_D(t)=I_De^{\frac{v_d}{V_T}}$
+
+This **small-signal approximation** is valid for signals whose amplitudes
+are smaller than around $5mV$, as this operates in the "exponential" region 
+of a diodes forward-bias region. 
+
+Using a **taylor-series expansion**, we can expand the equation to 
+
+$i_D\approx I_D(1+\frac{v_d}{V_T})$
+
+
+
 
 
 
