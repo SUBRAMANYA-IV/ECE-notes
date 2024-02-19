@@ -294,13 +294,70 @@ Using a **taylor-series expansion**, we can expand the equation to
 
 $i_D\approx I_D(1+\frac{v_d}{V_T})$
 
+Given that This is the _superimposed_ currents, ie 
+
+$i_D=I_D+i_d$
+
+we finally get
+
+$i_d=\frac{I_D}{V_T}v_d$
 
 
 
 
 
+The quantity relating the _signal current_ $i_d$ to the signal voltage $v_d$
+is called the **conductance**. The inverse (or reciprocal) of this symbol
+is the **resistance**, given by $\Omega$
+
+$r_d=\frac{V_T}{I_D}$
+
+graphically, it can be interpreted that, because the input signal is
+sufficiently small such that the change _along_ the diode IV curve is small
+enough to approximate it to a linear relationship, similar to how a derivative
+works (or literally how a derivative works lol)
+
+given this information, it can also be stated that 
+
+$r_d=\frac{1}{\frac{di_D}{dv_D}}$
+
+some important points that can be inferred from above derivations are that
+
+- the dc bias point is called the **quiescent point**
+- small signal analysis can be performed seperately from the dc bias
+  - ie, once the DC analysis is done, the small signal analysis can be done by 
+    ignoring (shorting) all DC components and replacing the diode with an 
+    equivalent resistance as calculated above 
 
 
+
+
+
+## use of diode forward drop in voltage regulation
+
+A voltage regulator is a circuit whose purpose is to provide a **constant 
+DC voltage between its output terminals**
+
+the output must remain constant despite 
+
+- changes to the load current drawn from the regulator's output terminal
+- changes in the DC power supply voltage that feeds the regulator circuit
+
+using the property of dioes that 
+
+- the voltage drop is almost constant at 0.7 volts
+- but the current flowing through it varies
+
+
+# Rectifier Circuits
+
+## Half-Wave Rectifier
+
+Given a realistic diode, when given an AC input voltage, the output voltage
+can be given by
+
+$v_o=0,v_s<V_D$
+$v_o=v_s-V_D\,v_s>V_t$
 
 
 
