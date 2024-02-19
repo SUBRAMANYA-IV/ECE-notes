@@ -359,6 +359,22 @@ can be given by
 $v_o=0,v_s<V_D$
 $v_o=v_s-V_D\,v_s>V_t$
 
+![half-bridge-rectifier](https://github.com/SUBRAMANYA-IV/ECE-notes/blob/master/340/images-and-diagrams/half-bridge-rectifier.png)
+
+The quantities in the diagram are
+
+- $V_D$: diode voltage drop, usually around 0.7 to 0.8 volts
+- $v_s$: the input voltage signal 
+- $v_o$: the output voltage signal 
+
+Another important quantity is the **peak inverse voltage**, or PIV, determined
+by the largest reverse voltage the diode must be able to handle without
+breaking down. Common sense dictates that the PIV is just
+
+PIV=$V_S$
+
+(note: capitals are used for the amplitude,lower case for the actual
+signal itself)
 
 
 
