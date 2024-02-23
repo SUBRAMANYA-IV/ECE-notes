@@ -377,6 +377,81 @@ PIV=$V_S$
 signal itself)
 
 
+## Full-Wave Rectifier
+
+A full-wave rectifier uses both halves of the input sinusoid. To do this,
+it inverts the negative half of the input signal. 
+
+There are two implementations of this method.
+
+- center-tapped transformer
+- full bridge (wheatstone) rectifier
+
+Both have their pros and cons, but namely; center tapping is much more difficult
+but gives a lower output voltage-drop ($V_D$)
+full-bridge rectifiers are cheaper and simpler but give a greater output
+voltage drop 
+
+
+### Transformer full-wave rectifier 
+
+By center-tapping a transformer, equal voltages $v_s$ across two halves of
+the secondary winding with the given configuration
+
+![transformer-rectifier](https://prepbytes-misc-images.s3.ap-south-1.amazonaws.com/assets/1681390349606-2%20%289%29.png)
+
+During the positive half of the cycle, only $D_1$ has forward-bias voltage
+apllied to it, allowing current to flow. Vice versa is true to the bottom
+diode, **NOTING** the secondary windings polarity. 
+The important thing is, during both modes of operation, the current flows
+in the same direction through the load, leading to the same (positive) voltage
+across the load
+
+the PIV can be given with the following reasoning: During the positive
+half-cycle, diode $D_1$ is conducting while $D_2$ is in its reverse-bias
+  region. The voltage at the _cathode_ of $D_2$ is $v_o$, and the voltage 
+  at the _anode_ is $-v_s$. Thus the reverse voltage across $D_2$ will be
+  $(v_o+v_s)$ which will reach a max when $v_o$ is at its peak value of 
+  $(V_S-V_D)$ and $v_s$ is at its peak value at $V_S$, hence 
+  
+  $PIV=2V_s-V_D$
+
+
+
+### Bridge Rectifier
+
+Alternative full-wave rectifier, given by using a "diamond" configuration of
+diodes. 
+
+![full-bridge-rectifier](https://lastminuteengineers.com/wp-content/uploads/2020/02/Fullwave-Bridge-Rectifier.png)
+
+Its operation is as follows: During the positive half cycle of the input
+voltage $v_s$, the path $D_1$, resistor, $D_2$ forms the path-of-least-resistance
+to ground. Meanwhile, $D_3$ and $D_4$ will be reverse-biased. Note that on the 
+closed path, there are two diodes, hence the voltage drop will be _twice_
+as great
+
+the PIV can be given as such: During a positive half cycle, the voltage 
+at the anode of $D_4$ is given by $v_0$, and the voltage at the cathode is
+given by 
+**TODO**
+
+$PIV=V_S-V_D$
+
+
+## Rectifier with a Filter Capacitor
+
+Placing a capacitor _in paralell_ with the load, called a **filter capacitor**,
+will allow for the "bumpy"nature of the outuput signal to be "smoothened" out.
+
+![filter-capacitor](https://electric-shocks.com/wp-content/uploads/2019/06/Full-Bridge-Rectifier-Current-Flow-during-positive-Half-Cycle.jpg)
+
+To first illustrate this point, we will examine a simple circuit with an 
+_ideal diode_ with a load resistor and capacitor in parallel. 
+
+
+
+
 
 
 
