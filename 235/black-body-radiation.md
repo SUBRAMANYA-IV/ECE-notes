@@ -1,4 +1,4 @@
-# Black body radiation
+### Black body radiation
 
 ##### What is a black body?
 
@@ -91,6 +91,8 @@ can be shown to be
 
 $R=\frac{1}{4}cU$
 
+(Remember, the unit of $R$ is $\frac{W}{m^3}$)
+
 this principle can be extended as a function, given by 
 
 $R(\lambda)=\frac{1}{4}cu(\lambda)$
@@ -127,7 +129,42 @@ whereas the experiment shows the opposite; it approaches 0.
 This conflict of theoretical and experimental observations was called the 
 _ultraviolet catastrophe_. The solution? 
 
-##Planck's Law
+## Planck's Law
+
+The fundamental assumtion is that, as the wavelength gets shorter, the
+number of _modes_, or standing waves, possible will increase. therefor, as 
+$\lambda\rightarrow\infty$ the number of modes of oscillation approach infinity
+as seen by the equation $n(\lambda)=8 \pi \lambda^{-4}$, which gives
+_the number of modes of oscillations (ie, the number of standing waves possible
+per unit volume)_. 
+For the energy density formula $u(\lambda)$ to approach zero as $\lambda\rightarrow 0$
+According to classic physics, the EM waves in the cavity are produced by 
+accelerated electric charges in the walls of the cavity vibrating as
+simple harmonic oscillators. Recall that the radiation emitted by such
+oscillators has the **SAME FREQUENCY** as the oscillation itself. 
+This in the end leads to the same problem as before, ie the ultraviolet 
+catastrophe
+
+Plank managed to solve this by deriving an equation by calculating the average
+energy $\bar{E}$ **assuming** that the energy of the oscillating charges, 
+and hence the radiation that was emitted, was discrete; ie, that it 
+could take on only the values of $0,\epsilon,2\epsilon...n\epsilon$ where $\epsilon$ represents the energy of each particle, which can be written as 
+
+$E_n=n\epsilon=nhf$
+
+The rest of the derivation is beyond the scope of this class, but the important
+thing is 
+
+Plank Tried to reconcile his new equation with classical physics, but was
+unable to. This lead to the idea of _quantization of energy_, or that it could
+only occur at integer multiples of a fundamental quantity, which was later
+proven by einstein to explain the photoelectric effect and suggested that
+rather than being a strange property of oscilators in the cavity walls
+and blackbody radiation, quantization was a fundamental charecteristic of
+light energy. 
+
+
+
 
 
 
