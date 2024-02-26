@@ -1,6 +1,6 @@
 # The Wavelike properties of particles
 
-##The de-Broglie hypothesis
+## The de-Broglie hypothesis
 
 De-bregolie related the frequency/wavelength of a traveling electron to 
 the energy it caried with these two equations
